@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <style>
+     /* Glow effect and larger size for #date-time only */
+     #date-time {
+        color: white;
+        font-size: 15px; /* Increase size as desired */
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),  /* Red glow */
+                     0 0 20px rgba(0, 255, 0, 0.8),  /* Green glow */
+                     0 0 30px rgba(0, 0, 255, 0.8); /* Blue glow */
+      
+     }</style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+
+        <a href="tel:+01123456790" class="helpline-box">
+
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+
+          <div class="wrapper">
+            <p class="helpline-title">directory</p>
+
+            <p class="helpline-number">+63 0123456789</p>
+          </div>
+
+        </a>
+
+        <a href="#" class="logo">
+          <img src="logo.png" alt="directory logo" width="100" height="auto">
+        </a>
+
+        <div class="header-btn-group">
+
+
+
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+
+            <a href="#" class="logo">
+              <img src="directory.png" alt="Directory">
+            </a>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="#home" class="navbar-link" data-nav-link>home</a>
+            </li>
+
+          
+            <li>
+              <a href="#destination" class="navbar-link" data-nav-link>destination</a>
+            </li>
+
+            <li>
+              <a href="#gallery" class="navbar-link" data-nav-link>gallery</a>
+            </li>
+
+            <li>
+              <a href="#footer" class="navbar-link" data-nav-link>about us</a>
+            </li>
+
+
+            <li>
+              <a href="#contact" class="navbar-link" data-nav-link>contact us</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        
+
+      </div>
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title">basic directory</h2>
+
+          <p class="hero-text">
+            
+          </p>
+          
+          <div class="header-btn-group-center">
+            <p id="date-time"></p>
+          </div>
+          
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TOUR SEARCH
+      -->
+
+      <section class="tour-search">
+        <div id="search-container" style="display: flex; flex-direction: column; width: 100%; max-width: 400px; margin: auto;">
+          <!-- Search bar -->
+          <div class="header-btn-group" style="display: flex; background-color: #ffffff; padding: 10px; border-radius: 8px;">
+            <button class="search-btn" aria-label="Search" style="background: none; border: none; cursor: pointer; padding: 0;">
+              <ion-icon name="search" style="font-size: 20px; color: #000;"></ion-icon>
+            </button>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search popular cities in the Philippines"
+              style="border: none; outline: none; font-size: 16px; flex: 1; color: #000; background-color: #ffffff; padding-left: 5px;"
+            />
+            
+          </div>
+        
+          <!-- Results will appear here -->
+          <div id="search-results" style="margin-top: 10px; background-color: #f9f9f9; border-radius: 8px; padding: 10px; display: none;">
+            <p style="color: #666; text-align: center;">No results found</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="popular" id="destination">
+        <div class="container">
+      
+          <p class="section-subtitle">Uncover place</p>
+      
+          <h2 class="h2 section-title">Popular Cities of the Philippines</h2>
+      
+          <p class="section-text"></p>
+      
+          <ul class="popular-list" id="popularList">
+      
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSqfLCG6pb5TfvBe1rSmrB6KoEMoq7H9k_B-wvbCPINMKQEt8xD6zqXl7KCHzAbN2R1hbNZguQo1b3fW_biy-anh0_4IAkDdoEYpH-dUg" alt="manila" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <h3 class="h3 card-title"><a href="#">Manila</a></h3>
+                  <p class="card-text">
+                    The capital and second-most-populous city of the Philippines after Quezon City. Located on the eastern shore of Manila Bay on the island of Luzon.
+                  </p>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQnOCHbz734N1aY9_GG7pO6qDn0spVOgedUKSo66zE41wFM8MqoPiFPhjO3KODHSb9A_uWSrSqow9C_vimNuCeINQ7SE4VFHvD7DryE8Q" alt="cebu" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <h3 class="h3 card-title"><a href="#">Cebu</a></h3>
+                  <p class="card-text">
+                    Cebu City, officially the City of Cebu (Cebuano: Dakbayan sa Sugbo), is a 1st class highly urbanized city in the Central Visayas region of the Philippines.
+                  </p>
+                </div>
+              </div>
+            </li>
+      
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQtn9D-zQq3ZY4CeeN7Uckqha_AXxPlFRZ3OOzbLhG8uhilgn0Xr_P9zrhcJ21wxqWsZkjxebFd52zZ7ri306EQk4YZDnGcsPkCcb2XgQ" alt="baguio" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <h3 class="h3 card-title"><a href="#">Baguio</a></h3>
+                  <p class="card-text">
+                    Baguio is a mountain town of universities and resorts. Called the “City of Pines,” it’s particularly popular in summer due to unusually cooler weather.
+                  </p>
+                </div>
+              </div>
+            </li>
+      
+          </ul>
+      
+          <button class="btn btn-primary" id="loadMoreBtn">More Destination</button>
+      
+        </div>
+      </section>
+
+
+
+
+
+      <section class="package" id="package">
+        <div class="container">
+      
+          <p class="section-subtitle"></p>
+      
+          <h2 class="h2 section-title">Essential Philippines</h2>
+      
+          <p class="section-text"></p>
+      
+          <ul class="package-list" id="packageList">
+      
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/c5/8a/28/img-20160330-213021-largejpg.jpg?w=900&h=-1&s=1" alt="Puerto Princesa Underground River" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3 card-title">Puerto Princesa Underground River</h3>
+                  <p class="card-text">Caverns & Caves, National Parks</p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+                        <p class="text">7am/6pm</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+                        <p class="text">Philippines</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(25 reviews)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <a href="./html/puerto-princesa.html" class="btn btn-secondary">See more</a>
+                </div>
+              </div>
+            </li>
+      
+            <!-- Other initial cards here -->
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/12/1e/73/photo0jpg.jpg?w=900&h=500&s=1" alt="Chocolate Hills Natural Monument" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Chocolate Hills Natural Monument</h3>
+
+                  <p class="card-text">
+                    Geologic Formations
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">7am/6pm</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Philippines</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+
+                  <div class="wrapper">
+
+                    <p class="reviews">(20 reviews)</p>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                 
+                  <a href="./html/chocolate-hils.html" class="btn btn-secondary">See more</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/45/09/2c/kayangan-lake-dubbed.jpg?w=600&h=-1&s=1" alt="Kayangan Lake" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Kayangan Lake</h3>
+
+                  <p class="card-text">
+                    Bodies of Water
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">7am/6pm</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Philippines</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+
+                  <div class="wrapper">
+
+                    <p class="reviews">(40 reviews)</p>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                  </div>
+
+                 
+                  <a href="./html/Kayangan Lake.html" class="btn btn-secondary">See more</a>
+
+                </div>
+
+              </div>
+            </li>
+              
+          </ul>
+      
+          </ul>
+      
+          <button class="btn btn-primary" id="viewMoreBtn">View more</button>
+      
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #GALLERY
+      -->
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle"></p>
+
+          <h2 class="h2 section-title">Photo gallery</h2>
+
+          <p class="section-text">
+            
+          </p>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQk2ig_zXcsQ1_SBxpS1xDVBIbrm9B7aPAD8ILTHoczoUMMk-Rb-Iy20AN-ClzGMam8dAbv7bGYcodmJy7On7jagdHJ0edbK3idD_JCng" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR9VAYeLbXdF7G84FYkjB0haTba7NEy-NB3Zx3HgFFq7H8nbWINvYJu6exrF8nuAm90Xtp5IAsqmDwP4c9tTnevcOJOXYjdzLce7iAXow" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQCOoIvkakT_O1uaDb1b79OfFELq4zXXvO2fyVz5Dib6ZN1ZGJb8E436b6KotT79IvKNdqEZLWMw0c_BY95C32wV6MtnpA-rY1AZ8fIrw" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipOdJ3mps0R0Qcz2-e5NZE7OSv5CbNkg-7V1Mayd=w675-h390-n-k-no" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSBQ-7FinpbLn1buu0mhuIslrdhl4N28_QINoAymYcPz2wL_HlShD_ghGOrcS8m573nrXZRWEwGYViCesynGkYqhItBlkDAF27nwY9BfJI" alt="Gallery image">
+              </figure>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+    
+            <div class="cta-content">
+                <p class="section-subtitle">Contact Us</p>
+    
+                <h2 class="h2 section-title">Let Us Help You Plan the Perfect Trip!</h2>
+    
+                <p class="section-text">
+                    Whether you're seeking a relaxing getaway or an adventure of a lifetime, we're here to make it happen. Our expert travel consultants are ready to create unforgettable experiences tailored just for you. Get in touch today, and let us handle the details while you focus on making memories!
+                </p>
+            </div>
+  
+    
+        </div>
+    </section>
+    
+
+
+
+
+
+ <!-- FOOTER -->
+<footer class="footer"id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="./assets/images/logo copy.png" alt="Tourly logo">
+        </a>
+        <p class="footer-text">
+          At Basic Directory, we are dedicated to providing you with unforgettable experiences. From custom itineraries to curated directions, we’re here to make your dreams come true.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h4 class="contact-title">Get in Touch</h4>
+        <p class="contact-text">
+          Have questions? Our team is here to assist you with any travel needs. Contact us today!
+        </p>
+        <ul>
+          <li class="contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <a href="01234567789" class="contact-link">+63 0123456789</a>
+          </li>
+          <li class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="www.trivago.com" class="contact-link">@directory.com</a>
+          </li>
+          <li class="contact-item">
+            <ion-icon name="location-outline"></ion-icon>
+            <address>Philippines</address>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-form">
+        <p class="form-text">
+          Stay updated with the latest travel tips, offers, and news! Subscribe to our newsletter now.
+        </p>
+        <form action="" class="form-wrapper">
+          <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+          <button type="submit" class="btn btn-secondary">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2024 <a href="#">Basic Directory</a>. All rights reserved.
+      </p>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/cities.js"></script>
+  <script src="./assets/js/more-destination.js"></script>
+  <script src="./assets/js/viewmore.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

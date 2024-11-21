@@ -1,0 +1,45 @@
+<div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 image-container">
+                <img src="path_to_image.jpg" alt="Vigan Image">
+            </div>
+            <div class="col-md-6">
+                <h1>Things to Do in Vigan</h1>
+                <p>Check out must-see sights and activities: <a href="#">Calle Crisologo</a>, <a href="#">Dancing Fountain</a>, <a href="#">Specialty Museums</a>, <a href="#">Historic Sites</a>. For personalized recommendations, try our AI trip-planning product.</p>
+                <button class="btn btn-custom btn-lg" type="button">Build your trip</button>
+                <span class="badge badge-secondary ml-2">Powered by AI BETA</span>
+            </div>
+        </div>
+    
+        <h3 class="mt-5">Explore popular experiences</h3>
+        <p>See what other travelers like to do, based on ratings and number of bookings.</p>
+        
+        <div class="row">
+            <div class="col-auto mb-2">
+                <button class="btn btn-outline-secondary">Private Drivers (1)</button>
+            </div>
+            <div class="col-auto mb-2">
+                <button class="btn btn-outline-secondary">Historic Sites (3)</button>
+            </div>
+            <div class="col-auto mb-2">
+                <button class="btn btn-outline-secondary">Points of Interest & Landmarks (5)</button>
+            </div>
+            <div class="col-auto mb-2">
+                <button class="btn btn-outline-secondary">Specialty Museums (4)</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="navbar" style="display: flex; align-items: center; padding: 10px 20px; background-color: #fff; border-bottom: 1px solid #ddd; flex-wrap: wrap;">
+        <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSmw14XDLYaNmU0mDEqMnpWDysnW-H13Y7citl-b3-GhhrbL-CzE7zG2SQtMRYA4j9FsfQwiY92pq1C1FF510AtE5FaAfjvSVhYCZ1SMA" alt="Vigan Icon" style="height: 24px; margin-right: 10px;">
+        
+        <a href="#" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">vigan</a>
+        <a href="vigan1.html" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">Hotels</a>
+        <a href="./assets/html/vigan.html" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">Things to Do</a>
+        <a href="#" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">Restaurants</a>
+        <a href="#" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">Flights</a>
+        <a href="#" style="margin: 5px 10px; text-decoration: none; color: black; font-weight: bold;">Forums</a>
+    </div>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerto Princesa Underground River</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="../logo.png" type="image/svg+xml">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .photo-card {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 300px; /* Fixed height for the card */
+            margin-bottom: 10px; /* Add space between the two cards */
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%; /* Ensure the image fills the entire container */
+            object-fit: cover; /* Ensures the image covers the container without stretching */
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .package-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555555;
+            transform: translateY(-5px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        iframe {
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gallery Section -->
+    <div class="container gallery-container">
+        <div class="gallery-title" style="font-family: serif; font-size: 2em;">Puerto Princesa Underground River</div>
+        <div class="row">
+            <!-- Main Image -->
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/c5/8a/28/img-20160330-213021-largejpg.jpg?w=900&h=-1&s=1" alt="Main Resort Image">
+                    <div class="photo-overlay">Popular Choice</div>
+                </div>
+                <br>
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/c5/8a/28/img-20160330-213021-largejpg.jpg?w=900&h=-1&s=1" alt="Main Resort Image">
+                   
+                </div>
+            </div>
+            
+            <!-- Small Images -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/67/34/3c/photo3jpg.jpg?w=900&h=-1&s=1" alt="Room View">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/ee/0b/14/view-from-outside-the.jpg?w=800&h=500&s=1" alt="Exterior View">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/6a/fb/7f/entrance-of-the-underground.jpg?w=600&h=400&s=1" alt="Bathroom">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/58/38/78/puerto-princesa-underground.jpg?w=600&h=400&s=1" alt="Lobby">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Additional Images Row -->
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/4c/d8/1c/filename-gedc6652-jpg.jpg?w=600&h=400&s=1" alt="Conference Room">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/48/74/5a/underground-river.jpg?w=600&h=400&s=1" alt="Resort View">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/30/f5/13/puerto-princesa-underground.jpg?w=600&h=400&s=1" alt="Swimming Pool">
+                </div>
+            </div>
+    
+            <!-- Bottom Row -->
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/30/f5/11/when-river-meets-the.jpg?w=600&h=400&s=1" alt="Gym">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/29/ac/45/puerto-princesa-underground.jpg?w=600&h=400&s=1" alt="Kids Play Area">
+                    
+                    </div>
+                 </div>
+             </div>
+         </div>
+
+
+    
+
+    <!-- About Section -->
+    <div class="container">
+        <div class="package-card">
+            <h3>Puerto Princesa Underground River</h3>
+            <p>Puerto-Princesa Subterranean River National Park encompasses one of the world's most impressive cave systems, featuring spectacular limestone karst landscapes, pristine natural beauty, and intact old-growth forests and distinctive wildlife.</p>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="container" id="map">
+        <h4>Locate Us</h4>
+        <iframe
+            src="//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10888.307207876947!2d118.91495655241444!3d10.190170044697952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33b59142409f2dd9%3A0x1ecb5dab92f27fc4!2sPuerto%20Princesa%20Subterranean%20River%20National%20Park!5e0!3m2!1sen!2sph!4v1731737733318!5m2!1sen!2sph"
+            width="100%" height="450"></iframe>
+    </div>
+    
+
+    <!-- Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h4>Check Price</h4>
+            <form id="priceForm">
+                <label for="checkinDate">Check-in Date</label>
+                <input type="date" id="checkinDate" required>
+                <label for="checkoutDate">Check-out Date</label>
+                <input type="date" id="checkoutDate" required>
+                <div id="totalPrice"></div>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function closeModal() {
+            document.getElementById('priceModal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Loch Park Vigan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="../logo.png" type="image/svg+xml">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .photo-card {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 300px; /* Fixed height for the card */
+            margin-bottom: 10px; /* Add space between the two cards */
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%; /* Ensure the image fills the entire container */
+            object-fit: cover; /* Ensures the image covers the container without stretching */
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .package-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555555;
+            transform: translateY(-5px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            overflow-y: auto;
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        iframe {
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gallery Section -->
+    <div class="container gallery-container">
+        <div class="gallery-title" style="font-family: serif; font-size: 2em;">Safari Hotel and Villas</div>
+        <div class="row">
+            <!-- Main Image -->
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/6d/da/1131524d796e3c67dc92bc09328f484d417b5e74b224990efc0e0c30eaa4.jpeg" alt="Main Resort Image">
+                    <div class="photo-overlay">Popular Choice</div>
+                </div>
+                <br>
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/45/36/4b59d36f6acc4927df33f497496050cd708164ff9c5234e3237c8ddc878a.jpeg" alt="Main Resort Image">
+                    
+                </div>
+            </div>
+            
+            <!-- Small Images -->
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/f6/32/7fe382c96cba6e162992a7a26dc3ea6c60feabee00c4e2177b0d6b2744a6.jpeg" alt="Room View">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/44/ce/56ef761a21b2bf24d1fd18f2226da5ac2c1f78f0d5634aeaf19bd183a3cc.jpeg" alt="Exterior View">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/ba/28/78deeedb35d09d1b7ddc3f1e59c247f9364b12e2fe26c951dc662314e60a.jpeg" alt="Bathroom">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="photo-card">
+                            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/36/7a/043bfc1633879400f17f25a47904498f91cb8067d55f56c5142e5ed997c7.jpeg" alt="Lobby">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Additional Images Row -->
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/bd/20/73eb6188f4a3d41895e536349888c979d1d69756f5937973d2193d7c39d2.jpeg" alt="Conference Room">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/85/64/6ce3138b724f61064e8244eb44a75c7717270a6b3345918cbb5f565de1aa.jpeg" alt="Resort View">
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/a5/f8/1b0193eb37fb8199845d259e32c9845e64e43f964b61dab5325b1b974134.jpeg" alt="Swimming Pool">
+                </div>
+            </div>
+    
+            <!-- Bottom Row -->
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/9c/09/79b9d1e5f19bb421f1e05f91667c0fd3c56f30a813d5906f80e12d92251e.jpeg" alt="Gym">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="photo-card">
+                    <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/bf/7e/0f5630d11dcd3c9211453094da35720431b1c47493063c4417eba365e9ab.jpeg" alt="Kids Play Area">
+                    <div class="photo-overlay">
+                        <a href="https://www.trivago.com.ph/en-PH/oar/hotel-west-loch-park-vigan-vigan-city?search=100-9059092;dr-20241201-20241210&sid=3539245" target="_blank" style="color: inherit; text-decoration: none;">
+                          show more/www.trivago.com
+                        </a>
+                      </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+
+
+    
+
+    <!-- About Section -->
+    <div class="container">
+        <div class="package-card">
+            <h3>About West Loch Park Vigan</h3>
+            <p>As you enter into the luxurious West Loch Park Hotel after a long day of roaming around the City of Vigan, we provide the comfort and relaxation you wish to experience. The simplicity of its architecture makes you, our guests, feel the cozy vibe and elegance that the company wants to showcase. West Loch Park Hotel Vigan has 15 comfortable with a touch of sophistication guest rooms that are secured by a high-tech key card security system to keep you, safe, secured and relaxed at all times. We also offer a variety of Western and Asian cuisine that will fit your tastes and preference that the other hotels in town doesn't have. Rooms: Standard Room : 22 square meters one full bed, bathroom with bidet, flat screen TV, air conditioning, WIFI, a safe room guarded with high technology keycard system. Superior Room: 27 square meters one queen bed, bathroom with bidet, veranda with a view of the streets of Vigan, spacious, sofa chair, flat screen TV, air conditioning, WIFI, a safe room guarded with high technology keycard system. Deluxe Room: 31 square meters two twin beds, bathroom with bidet, flat screen TV, air conditioning, WIFI, a safe room guarded with high technology keycard system. HOTEL AMENITIES Fully Air-conditioned Wi-Fi (Public Areas) Restaurant Stand-by 24 hr Generator Parking / Valet Parking Our Kaope Restaurant offers a variety of Western, cintinental and Asian food that will satisfy your cravings. Locals also flock our restaurant because of our exceptional food. West Loch Park Hotel Vigan is located in the heart of Vigan City. We are only 300 meters or just 3-4 minutes walk away from Calle Crisologo; 550 meters or 7 minutes away from Plaza Salcedo Dancing Fountain; 300 meters or 3-4 minutes walk away from St. Paul Metropolitan Cathedral; 800 meters or 9-10 minutes away from Pagburnayan or Jar Making; 130 meters or 1-2 minutes walk away from a grocery store (JTC); and there are a lot of convenience stores for only 3-4 minutes walk. We are are also near to museums, there's even a shopping mall that's only 3 minutes walk. We offer tour packages around the City of Vigan to Laoag or Pagudpud with a company van.</p>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="container" id="map">
+        <h4>Locate Us</h4>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3803.6400758871328!2d120.38586187493912!3d17.57231478334672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338e6575f191edd5%3A0x38b977853653566e!2sWest%20Loch%20Park%20Hotel%20Vigan!5e0!3m2!1sen!2sph!4v1731930318486!5m2!1sen!2sph"
+            width="100%" height="450"></src=>
+    </div>
+    
+    <hr>
+    <!-- Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h4>Check Price</h4>
+            <form id="priceForm">
+                <label for="checkinDate">Check-in Date</label>
+                <input type="date" id="checkinDate" required>
+                <label for="checkoutDate">Check-out Date</label>
+                <input type="date" id="checkoutDate" required>
+                <div id="totalPrice"></div>
+                <button type="submit" class="btn">Book Now</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function closeModal() {
+            document.getElementById('priceModal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
