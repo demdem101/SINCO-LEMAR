@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Attractions in Vigan</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/images/logo.png" type="icon">
+    <link rel="stylesheet" href="glightbox.min.css">
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+        }
+
+        .active-link {
+            font-weight: bold;
+            color: #007bff !important;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Image Section Styling */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Styling */
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .attraction-category {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .icon {
+            font-size: 1.2rem;
+            color: #ff9800;
+        }
+
+        /* Button Styling */
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-outline-secondary {
+            border-color: #777;
+            color: #777;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #777;
+            color: #fff;
+        }
+
+        /* Section Titles */
+        h1, h2, h3 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Dynamic Section Styling */
+        #dynamic-title {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        #dynamic-content .card {
+            height: 400px; /* Consistent height for all cards */
+        }
+
+        /* Horizontal Line Styling */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin: 20px 0;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0. 7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff0000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .card {
+                margin: 10px auto;
+            }
+
+            .card-body {
+                padding: 10px;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand" href="index.html">Vigan Explorer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Add navigation links here if needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6 image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcROAFp0r5VBlXh70a5kVBCi3pQtF2LOZWHTzjSsCO7qlR5dpekDBdK9l9jx_tm9YoQTbp81lN09uSiTPSWnl_4sne8s_dNFM3IBIQlymQ" alt="Vigan Image">
+                </div>
+                <div class="col-md-6">
+                    <h1>Things to Do in Vigan</h1>
+                    <p>Check out must-see sights and activities: <a href="#">Calle Crisologo</a>, <a href="#">Dancing Fountain</a>, <a href="#">Specialty Museums</a>, <a href="#">Historic Sites</a>.</p>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h3 class="mt-5">Explore popular experiences</h3>
+            <p>See what other travelers like to do, based on ratings and number of bookings.</p>
+
+            <div class="row" id="experience">
+                <div class="col-auto mb-2">
+                    <button class="btn btn-outline-secondary" onclick="showAttractions('private-drivers')">Private Drivers</button>
+                </div>
+                <div class="col-auto mb-2">
+                    <button class="btn btn-outline-secondary" onclick="showAttractions('historic-sites')">Historic Sites</button>
+                </div>
+                <div class="col-auto mb-2">
+                    <button class="btn btn-outline-secondary" onclick="showAttractions('landmarks')">Points of Interest & Landmarks</button>
+                </div>
+                <div class="col-auto mb-2">
+                    <button class="btn btn-outline-secondary" onclick="showAttractions('museums')">Specialty Museums</button>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <h3 id="dynamic-title" class="mt-5"></h3>
+            <div id="dynamic-content" class="row">
+                <!-- Dynamic attractions will be injected here -->
+            </div>
+
+            <hr class="my-5" id="attraction">
+            <h2>Top Attractions in Vigan</h2>
+            <p class="text-muted">These rankings are informed by Tripadvisor data—we consider traveler reviews, ratings, number of page views, and user location.</p>
+
+            <div class="row">
+
+                <!-- Map Modal -->
+                <div id="mapModal" class="modal" onclick="closeModal()">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <iframe id="mapIframe" class="modal-content" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <!-- Attraction 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselCalleCrisologo" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/84/8c/d3/early-morning-view.jpg?w=500&h=400&s=1" class="d-block w-100" alt="Calle Crisologo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR9VAYeLbXdF7G84FYkjB0haTba7NEy-NB3Zx3HgFFq7H8nbWINvYJu6exrF8nuAm90Xtp5IAsqmDwP4c9tTnevcOJOXYjdzLce7iAXow" class="d-block w-100" alt="Calle Crisologo second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTwTNdiMGR37VGZr3I5H3YKLIH8HQM9JwJCzPl_fDirSfSEtc7CY0GJZsFlB1lUZqOBYHwgBcdF08fBclfy2uqJp3DvE4uZGeODZlk3lA" class="d-block w-100" alt="Calle Crisologo third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCalleCrisologo" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselCalleCrisologo" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">1. Calle Crisologo <span class="icon">&#9733; 4.8</span></h5>
+                            <p class="attraction-category">Historic Walking Areas</p>
+                            <p class="review-text">"The cobblestone street, Spanish-era houses, and timeless vibe are mesmerizing."</p>
+                            <p class="text-muted">By traveler123</p>
+                            <a href="#" onclick="openModal('calleCrisologo')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselDancingFountain" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/1a/2d/88/dancing-fountain.jpg?w=500&h=400&s=1" class="d-block w-100" alt="Dancing Fountain">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/dancing-fountain-second-image.jpg" class="d-block w-100" alt="Dancing Fountain second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/dancing-fountain-third-image.jpg" class="d-block w-100" alt="Dancing Fountain third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDancingFountain" data-bs-slide="prev">
+                                <span class ="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselDancingFountain" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">2. Dancing Fountain <span class="icon">&#9733; 4.7</span></h5>
+                            <p class="attraction-category">Landmarks & Attractions</p>
+                            <p class="review-text">"A spectacular light-and-sound show, perfect for evening relaxation."</p>
+                            <p class="text-muted">By wanderlust_jane</p>
+                            <a href="#" onclick="openModal('dancingfountain')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselBantayBellTower" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/93/7d/fc/bantay-bell-tower.jpg?w=500&h=400&s=1" class="d-block w-100" alt="Bantay Bell Tower">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/bantay-bell-tower-second-image.jpg" class="d-block w-100" alt="Bantay Bell Tower second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/bantay-bell-tower-third-image.jpg" class="d-block w-100" alt="Bantay Bell Tower third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBantayBellTower" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselBantayBellTower" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">3. Bantay Bell Tower <span class="icon">&#9733; 4.6</span></h5>
+                            <p class="attraction-category">Historical Sites</p>
+                            <p class="review-text">"A serene and historical spot with stunning views of the city."</p>
+                            <p class="text-muted">By historylover45</p>
+                            <a href="#" onclick="openModal('bantay')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction 4 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselViganCathedral" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://lh5.googleusercontent.com/p/AF1QipO1uzhjRru_qvGJ9UYfzDuBCzzs_7kSeEFEXSsu=w408-h306-k-no" class="d-block w-100" alt="Vigan Cathedral">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/vigan-cathedral-second-image.jpg" class="d-block w-100" alt="Vigan Cathedral second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/vigan-cathedral-third-image.jpg" class="d-block w-100" alt="Vigan Cathedral third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselViganCathedral" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></ span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselViganCathedral" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">4. Vigan Cathedral <span class="icon">&#9733; 4.5</span></h5>
+                            <p class="attraction-category">Religious Sites</p>
+                            <p class="review-text">"Beautiful Spanish colonial architecture and a peaceful atmosphere."</p>
+                            <p class="text-muted">By faithwanderer</p>
+                            <a href="#" onclick="openModal('Cathedral')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction 5 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselPagburnayanJarFactory" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/ba/bc/d9/img-20191018-144909-largejpg.jpg?w=800&h=500&s=1" class="d-block w-100" alt="Pagburnayan Jar Factory">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/pagburnayan-jar-factory-second-image.jpg" class="d-block w-100" alt="Pagburnayan Jar Factory second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/pagburnayan-jar-factory-third-image.jpg" class="d-block w-100" alt="Pagburnayan Jar Factory third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPagburnayanJarFactory" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPagburnayanJarFactory" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">5. Pagburnayan Jar Factory <span class="icon">&#9733; 4.4</span></h5>
+                            <p class="attraction-category">Cultural Sites</p>
+                            <p class="review-text">"A great place to learn about Vigan’s traditional pottery-making process."</p>
+                            <p class="text-muted">By artisanenthusiast</p>
+                            <a href="#" onclick="openModal('jar')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attraction 6 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div id="carouselViganMuseum" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://lh5.googleusercontent.com/p/AF1QipNSfEg8lKCWhD0sg0x6gz9NsUMR0y_wbjWbNBIM=w325-h218-n-k-no" class="d-block w-100" alt="Vigan Museum">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/vigan-museum-second-image.jpg" class="d-block w-100" alt="Vigan Museum second view">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://example.com/vigan-museum-third-image.jpg" class="d-block w-100" alt="Vigan Museum third view">
+                                </div>
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselViganMuseum" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden"> Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselViganMuseum" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="attraction-title">6. Vigan Museum <span class="icon">&#9733; 4.6</span></h5>
+                            <p class="attraction-category">Museums</p>
+                            <p class="review-text">"A great place to explore Vigan’s rich history and heritage.........."</p>
+                            <p class="text-muted">By historybuff</p>
+                            <a href="#" onclick="openModal('Museum')" class="btn btn-primary">View on Map</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            const attractionsData = {
+                'private-drivers': [
+                    {
+                        title: "Vigan Private Driver",
+                        image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/df/b3/caption.jpg?w=500&h=400&s=1",
+                        category: "Transportation",
+                        review: "Excellent service and very reliable!",
+                        reviewer: "John Doe"
+                    }
+                ],
+                'historic-sites': [
+                    {
+                        title: "St. Paul’s Cathedral",
+                        image: "https://lh5.googleusercontent.com/p/AF1QipNhX8W6V0dFA_N1eKMOroG6U9lA2-hdYiVFnq-h=w270-h156-n-k-no",
+                        category: "Historic Sites",
+                        review: "A must-visit for history enthusiasts.",
+                        reviewer: "Jane Smith"
+                    },
+                    {
+                        title: "Burgos National Museum",
+                        image: "https://lh5.googleusercontent.com/p/AF1QipPDOZrKrZoU-QaSdDiWFwoxf0A3laCWqBQbZLKZ=w325-h218-n-k-no",
+                        category: "Museums",
+                        review: "Very informative exhibits about the local culture.",
+                        reviewer: "Maria Clara"
+                    }
+                ],
+                'landmarks': [
+                    {
+                        title: "Plaza Salcedo",
+                        image: "https://lh5.googleusercontent.com/p/AF1QipPUEHMsUf1fsOydjLNcf6rkXAgHEag5nMDMEUUF=w270-h156-n-k-no",
+                        category: "Landmarks",
+                        review: "Beautiful and well-maintained plaza.",
+                        reviewer: "Mark Anthony"
+                    },
+                    {
+                        title: "Syquia Mansion Museum",
+                        image: "https://lh5.googleusercontent.com/p/AF1QipPQTWgrd-6rwVCC_KpHxNhPQbCW4JrEKbrBBMJQ=w270-h156-n-k-no",
+                        category: "Landmarks",
+                        review: "Amazing artifacts and rich history.",
+                        reviewer: "Lucy Grey"
+                    }
+                ],
+                'museums': [
+                    {
+                        title: "National Museum Vigan",
+                        image: "https://lh5.googleusercontent.com/p/AF1QipOUmMTaVBVt-QHoY5bHmYsyipMWuN8q4WqUpvUN=w270-h156-n-k-no",
+                        category: "Museums",
+                        review: "Impressive collection of historical pieces.",
+                        reviewer: "Carlos Rivera"
+                    }
+                ]
+            };
+
+            function showAttractions(category) {
+        const dynamicContent = document.getElementById('dynamic-content');
+        const dynamicTitle = document.getElementById('dynamic-title');
+
+        // Update title
+        dynamicTitle.textContent = category.replace('-', ' ').toUpperCase();
+
+        // Clear previous content
+        dynamicContent.innerHTML = '';
+
+        // Populate new content
+        attractionsData[category].forEach(attraction => {
+            const card = `
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="${attraction.image}" class="card-img-top" alt="${attraction.title}">
+                        <div class="card-body">
+                            <h5 class="attraction-title">${attraction.title}</h5>
+                            <p class="attraction-category">${attraction.category}</p>
+                            <p class="review-text">"${attraction.review}"</p>
+                            <p class="text-muted">By ${attraction.reviewer}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            dynamicContent.insertAdjacentHTML('beforeend', card);
+        });
+    }
+</script>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS (Include at the end of the body) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/map.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directory</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="icon">
+    <link rel="stylesheet" href="main copy 2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+       /* Room Description Section */
+       .header {
+    background-color: #7a7a7a; /* Replace with your desired background color */
+}
+          .header-bottom {
+            background-color: #7a7a7a; /* Background color */
+
+        }
+
+        .header-bottom .social-list a,
+        .header-bottom .navbar-list a,
+        .header-bottom .btn {
+            color: #ffffff; /* Text color */
+        }
+
+
+.room-description {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.room-description h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.room-description p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.room-description ul {
+  list-style-type: none;
+}
+
+.room-description ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.room-description ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+}
+
+/* Additional Services Section */
+.additional-services {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.additional-services h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.additional-services ul {
+  list-style-type: none;
+}
+
+.additional-services ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.additional-services ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+}
+
+.image {
+            padding: 20px; /* Add some padding around the image */
+            background-color: white; /* White background for the image section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+        .image img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for the image */
+        }
+
+        .image-container {
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    padding: 20px; /* Optional: add some padding around the container */
+}
+
+.image-container img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners for the image */
+}
+    </style>
+</head>
+
+<body>
+
+    <header class="header" data-header>
+        <div class="overlay" data-overlay></div>
+
+        <div class="header-top">
+            <div class="container">
+                <a href="tel:+01123456790" class="helpline-box">
+                    <div class="icon-box">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <div class="wrapper">
+                        <p class="helpline-title">directory</p>
+                        <p class="helpline-number">+63 01234567890</p>
+                    </div>
+                </a>
+
+                <a href="#" class="logo">
+                    <img src="Untitled-1.png" alt="directory logo" width="100" height="auto">
+                </a>
+
+                <div class="header-btn-group">
+                    <button class="search-btn" aria-label="Search">
+                        <ion-icon name="search"></ion-icon>
+                    </button>
+                    <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <ul class="social-list">
+                    <li>
+                        <a href="https://web.facebook.com/share/15T1KN9dZQ/" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtu.be/LEF-IKN0AnM?si=Aq0vZDPb-gJz8pEG" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+
+                <nav class="navbar" data-navbar>
+                    <div class="navbar-top">
+                        <a href="#" class="logo">
+                            <img src="assets/images/directory.png" alt="directory logo">
+                        </a>
+                        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                    </div>
+
+                    <ul class="navbar-list">
+                        <li><a href="index.html" class="navbar-link" data-nav-link>home</a></li>
+                        <li><a href="index.html#destination" class="navbar-link" data-nav-link>destination</a></li>
+                        <li><a href="index.html#gallery" class="navbar-link" data-nav-link>gallery</a></li>
+                        <li><a href="#contact" class="navbar-link" data-nav-link>about us</a></li>
+                        <li><a href="#footer" class="navbar-link" data-nav-link>contact us</a></li>
+                    </ul>
+                </nav>
+
+                <button class="btn btn-primary" onclick="location.href='index.html#hotel';">Book Now</button>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <article>
+
+            <!-- hero -->
+            <section class="nav"></section>
+            </section>
+            <br>
+            <br>
+            <br><br><br><br><br><br><br><br>
+            <br>
+
+            <!-- hotel -->
+            <main class="main-content">
+                <div class="container">
+                    <section class="room-description">
+                        <div class="image-container">
+                            <img src="https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/hotelier-images/26/c6/30f3ebd54385cf5f440036261a136589b54f474432b937346bf89abfc4e2.jpeg" alt="">
+                        </div>
+                
+                    <br><br>
+                  
+                    <h2>About the Room of Paradores de Vigan</h2><br>
+                    <p>
+                      Experience the perfect blend of comfort and elegance in our luxury hotel room. Designed with modern aesthetics and equipped with top-tier amenities, this room offers everything you need for a relaxing and unforgettable stay.
+                    </p>
+                    <ul>
+                      <li>Spacious king-sized bed with premium linens</li>
+                      <li>Complimentary high-speed Wi-Fi</li>
+                      <li>Smart TV with international channels</li>
+                      <li>Modern en-suite bathroom with luxury toiletries</li>
+                      <li>Mini-bar and coffee/tea-making facilities</li>
+                    </ul>
+                  </section>
+            
+                  <section class="additional-services">
+                    <h2>Our Services</h2>
+                    <p>
+                      Guests staying in this room enjoy access to exclusive services, including:
+                    </p>
+                    <ul>
+                      <li>24/7 room service</li>
+                      <li>Daily housekeeping</li>
+                      <li>Access to our state-of-the-art fitness center</li>
+                      <li>Complimentary breakfast buffet</li>
+                    </ul>
+                  </section>
+                </div>
+              </main>
+           
+        </article>
+    </main>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="h5 section-title">ABOUT US!</h2>
+                
+                <br>
+                <p class="section-subtitle">Let Us Help You Plan the Perfect Trip</p>
+                <p class="section-text">
+                    Whether you're seeking a relaxing getaway or an adventure of a lifetime, we're here to make it happen. Our expert travel consultants are ready to create unforgettable experiences tailored just for you. Get in touch today, and let us handle the details while you focus on making memories!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="./assets/images/logo.png" alt="directorylogo">
+                    </a>
+                    <p class="footer-text">
+                        At Basic Directory, we are dedicated to providing you with unforgettable experiences. From custom itineraries to curated directions, we’re here to make your dreams come true.
+                    </p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="contact-title">CONTACT US!</h4>
+                    <p class="contact-text">
+                        Have questions? Our team is here to assist you with any directory needs. Contact us today!
+                    </p>
+                    <ul>
+                        <li class="contact-item">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <a href="tel:+630123456789" class="contact-link">+63 0123456789</a>
+                        </li>
+                        <li class="contact-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <a href="mailto:directory@directory.com" class="contact-link">@directory.com</a>
+                        </li>
+                        <li class="contact-item">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <address>Philippines</address>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-form">
+                    <p class="form-text">
+                        Stay updated with the latest travel tips, offers, and news! Subscribe to our newsletter now.
+                    </p>
+                    <form action="" class="form-wrapper">
+                        <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container-center">
+                <center>
+                    <p class="copyright">
+                        &copy; 2024 <a href="#">Basic Directory</a>. All rights reserved.
+                    </p>
+                </center>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GO TO TOP -->
+    <a href="#top" class="go-top" data-go-top>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
+
+    <!-- Custom JS links -->
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/vigandestination.js"></script>
+    <script src="vigan.js"></script>
+
+    <!-- Ionicon links -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
